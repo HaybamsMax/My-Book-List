@@ -1,0 +1,82 @@
+/* Global settings */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 20px; /* Add some padding around the content */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;    /* Center content horizontally */
+    height: 100vh;         /* Full height of the viewport */
+}
+
+/* Header styles */
+h1 {
+    font-size: 2.5em;
+    color: #2d3436;
+    text-align: center; /* Center the heading text */
+    margin: 0;         /* Remove margin for a flush top */
+    padding-bottom: 20px; /* Space below the header */
+}
+
+/* Book list container */
+#bookList {
+    list-style: none;
+    padding: 0;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto; /* Center the list */
+}
+
+/* Individual book list items */
+#bookList li {
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s forwards ease-in-out; /* Animation */
+}
+
+#bookList li img {
+    height: 100px;
+    width: 70px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#bookList li p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+
+/* Read/Unread styles */
+.read {
+    border-left: 5px solid #2ecc71;
+    color: #2ecc71;
+}
+
+.unread {
+    border-left: 5px solid #e74c3c;
+    color: #e74c3c;
+}
+
+/* Animation for the book list items */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

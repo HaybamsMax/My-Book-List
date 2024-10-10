@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Book List</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    
+    <h1>The book List</h1>
+    <ul id="bookList"></ul><!--Empty list to display books-->
+
+    <script>
+        //Array of books
+        var books = [
+            {
+                title: 'The Design of EveryDay Things',
+                author: 'Don Norman',
+                alreadyRead: false,
+                img: './book3.jpg'
+            }, {
+                title:'Vanity upon vanity Go for it !!!',
+                author: 'Haybams',
+                alreadyRead: true,
+                img: './book2.jpg'
+            },
+             {
+                title:'The Modern day Cleric',
+                author: 'Muha',
+                alreadyRead: true,
+                img: './book1.jpg'
+            }
+        ];
+        
+        //iterate through the books and add a page
+
+        books.forEach(book => {
+
+             var li = document.createElement('li');
+        var p = document.createElement('p');
+        p.className = 'bookTitle'
+        var img = document.createElement('img');
+        
+        //creates paragraph with book details
+
+        p.textContent = `${book.title} by ${book.author}`;
+        img.src = book.img;
+
+        if (book.alreadyRead) {
+            li.textContent = 'Status: Read';
+            li.classList.add('read');//add read style
+        } else {
+             li.textContent = 'Status: Not-Read';
+            li.classList.add('unread');//add unread style
+        }
+        //Append the image and details to the list items
+        li.appendChild(img);
+        li.appendChild(p);
+        //Appends <li> to the <ul> list
+        document.getElementById('bookList').appendChild(li);
+
+
+        });
+ 
+       
+
+            
+    </script>
+</body>
+</html>
